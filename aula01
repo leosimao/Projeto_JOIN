@@ -1,7 +1,10 @@
 /*
 1 - O que é e para que serve o JOIN? Quando devemos utilizar?
+JOIN é uma forma de combinar duas tabelas através de alguma chave ou valor comum entre elas, como por exemplo uma cahve estrangeira.
+Com isso, o JOIN se faz necessário quando precisamos vincular dados presentes em diferentes tabelas para obtê-los em um único resultado apresentado, como no exemplo disponibilizado
+em aula de trazer de uma tabela "estado" a sigla do mesmo com o nome de uma tabela "cidade" com os estados correspondentes.
 
-2 - sintaxe e quais são os passos para ENTENDER e OMINAR o JOIN?
+2 - sintaxe e quais são os passos para ENTENDER e DOMINAR o JOIN?
 
 3 - Preparar o material de "uma única tela" que será compartilhado...
 
