@@ -1,14 +1,32 @@
-## Atividade em Equipe JOIN
+## Atividade em Equipe PROJETO JOIN
 # 1 - O que é e para que serve o JOIN? Quando devemos utilizar?
-JOIN é uma forma de combinar duas tabelas através de alguma chave ou valor comum entre elas, como por exemplo uma cahve estrangeira.
-Com isso, o JOIN se faz necessário quando precisamos vincular dados presentes em diferentes tabelas para obtê-los em um único resultado apresentado, como no exemplo disponibilizado
-em aula de trazer de uma tabela "estado" a sigla do mesmo com o nome de uma tabela "cidade" com os estados correspondentes.
+Quando usamos JOINS dentro do SQL podemos retornar duas ou mais tabelas que possuem relacionamentos entre si, são recomendados quando queremos encontrar valores de uma tabelas em outra tabela através de uma condição. Para relacionarmos essas duas tabelas podemos simplesmente associar as tabelas, através de uma Primary Key e uma Foreign Key que é compativel ou também podemos usar operadores lógicos como (>= ; <=; =; <; >). Dentro do SQL temos alguma opções de JOINS sendo elas.
 
+* INNER JOIN
+* LEFT [OUTER] JOIN
+* RIGHT [OUTER] JOIN
+* FULL [OUTER] JOIN
+* CROSS JOIN
+
+Podemos ver na imagem abaixo como funciona cada uma delas:
+<img src = "https://cdn.discordapp.com/attachments/1024050282386169908/1024050941705596928/unknown.png">
+    
+Obs: imagem está faltando apenas o FULL [OUTER] JOIN, mas como o próprio nome ja diz é um JOIN completo semelhante ao CROSS JOIN
+    
 # 2 - Sintaxe e quais são os passos para ENTENDER e DOMINAR o JOIN?
 
-Existe duas formar de realizar o JOIN, a primeira é a forma mais recomendada e consequentemente mais utilizada. Segue a sintaxe
-
-`SELECT column_1, column_2 FROM table_main INNER JOIN second_table ON join_conditional`
-
-Podemos ainda acrescentar uma condição `WHERE` para que seja realizada uma condição 
-A segunda forma de realizar a relação entre duas tabelas, não recomendada 
+Podemos utilizar os JOINS de duas formas, uma mais performatica e outra, dependendo do tamanho do database, menos performática. A mais performatica portanto mais comum de se encontrar é o JOIN que é encontrado dento da clausula `FROM` que possui a seguinte sintaxe.
+    ```
+    SELECT
+        column_1, column_2, column_3
+    FROM
+        tb1
+        JOIN tb2 on tb2.id_tb2 = tb1.id_tb1
+    ```
+A forma menos performatica que podemos usar o JOIN é dentro de uma clausula `WHERE` que ficaria da seguinte forma
+    ```
+    SELECT
+        column_1, column_2, column_3
+    FROM tb1, tb2
+    WHERE tb1.id_tb1 = tb2.id_tb2
+    ```
