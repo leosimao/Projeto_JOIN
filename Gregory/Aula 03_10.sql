@@ -1178,6 +1178,22 @@ FROM cliente, cidade, estado
 WHERE cliente.cidade_id = cidade.id AND cidade.estado_id = estado.id AND (estado.sigla = 'PR' OR estado.sigla = 'SC' OR estado.sigla = 'RS');
 
 -- 9.	Escreva o comando que liste os nomes dos estados com cadastros ativos que possuem algum cliente cadastrado.
-SELECT estado.nome, cliente.nome
-FROM estado, cidade, nome
-WHERE 
+SELECT cliente.nome, estado.nome
+FROM estado, cidade, cliente
+WHERE cliente.cidade_id = cidade.id AND cidade.estado_id = estado.id AND estado.ativo = 'S';
+
+-- 10.	Escreva o comando que liste todas as vendas e o nome do respectivo funcionário que a realizou.
+SELECT venda.id, funcionario.nome
+FROM venda, funcionario
+WHERE venda.funcionario_id = funcionario.id
+ORDER BY venda.id;
+
+-- 11.	Liste o nome dos produtos, o preço de venda e o nome da unidade de medida.
+SELECT produto.nome, produto.preco_venda, unidade_medida.nome
+FROM produto, unidade_medida
+WHERE produto.unidade_medida_id = unidade_medida.id;
+
+-- 12.	Liste o nome dos produtos da marca "Coca-cola".
+SELECT produto.nome
+FROM produto, marca
+WHERE produto.marca_id = marca.id AND marca.nome = 'Coco-cola'
